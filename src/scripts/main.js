@@ -27,15 +27,15 @@ function calendarTable(year, month, element) {
     duration = 29;
   }
 
-  const lengthMonthArr = Math.ceil((duration + day) / 7) * 7;
-  const monthArr = Array(lengthMonthArr).fill('<td></td>');
+  const lengthMonthDays = Math.ceil((duration + day) / 7) * 7;
+  const monthDays = Array(lengthMonthDays).fill('<td></td>');
 
   for (let i = 0; i < duration; i += 1) {
-    monthArr[i + day] = `<td>${i + 1}</td>`;
+    monthDays[i + day] = `<td>${i + 1}</td>`;
   }
 
-  while (monthArr.length > 0) {
-    tbody += `<tr>${monthArr.splice(0, 7).join('')}</tr>`;
+  while (monthDays.length > 0) {
+    tbody += `<tr>${monthDays.splice(0, 7).join('')}</tr>`;
   }
   tbody += '</tbody>';
 
